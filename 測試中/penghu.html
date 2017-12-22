@@ -21,7 +21,7 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
         <script type = "text/javascript">
 
-            var penghuCenter = {lat: 23.465807, lng: 119.548109};
+            var penghuCenter = {lat: 23.485810, lng: 119.548109};
             var penghuZoom = 10;
             var penghuIsland = [
                 [ {lat: 23.568339, lng: 119.622011}, '澎湖本島（大山嶼）'],
@@ -49,6 +49,7 @@
                 for( i in penghuIsland ) {
                     marker = new google.maps.Marker({
                         position: penghuIsland[i][0],
+                        icon: './pin.png',
                         map: map
                     });
 
