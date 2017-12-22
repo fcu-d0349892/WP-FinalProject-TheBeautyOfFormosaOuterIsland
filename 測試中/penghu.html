@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>澎湖</title>
+        
+        <style>
+            #map {
+                height: 500px;
+                width: 500px;
+            }
+         </style>     
+	</head>
+
+	<body>
+
+        <h1>澎湖</h1>
+
+        <div id="map"></div>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
+        <script type = "text/javascript">
+
+            var penghuCenter = {lat: 24.175176, lng: 120.630947};
+            var penghuIsland = [
+                [ {lat: 24.1824159, lng: 120.6005393}, '臺中市西屯區臺灣大道4段1727號(東海大學內)'],
+                [ {lat: 24.175272, lng: 120.649134}, '臺中市西屯區河南路2段268號'],
+                [ {lat: 24.1766902, lng: 120.6376427}, '臺中市西屯區黎明路3段130號'],
+                [ {lat: 24.1646991, lng: 120.6520461}, '臺中市西屯區青海路1段83號'],
+                [ {lat: 24.1699328, lng: 120.6042603}, '臺中市西屯區工業區六路10號'],
+                [ {lat: 24.1837633, lng: 120.6015126}, '臺中市西屯區臺灣大道4段1650號(台中榮總內)'],
+                [ {lat: 24.1904375, lng: 120.610076}, '臺中市西屯區永安里西屯路3段166-80號'],
+                [ {lat: 24.1564676, lng: 120.6507665}, '臺中市西屯區大隆路60、62號'],
+                [ {lat: 24.1834831, lng: 120.6163645}, '臺中市西屯區福順路318號'],
+                [ {lat: 24.1665835, lng: 120.6409554}, '西屯區臺灣大道3段366號1樓'],
+                [ {lat: 24.2085836, lng: 120.6118869}, '西屯區中科路1號']
+            ];
+
+            function initMap() {
+
+                var infoWindow = new google.maps.InfoWindow();
+
+                var XitunDistrict = {lat: 24.175176, lng: 120.630947};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 14,
+                    center: XitunDistrict
+                });
+
+                for( i in XitunPostOffice ) {
+                    marker = new google.maps.Marker({
+                        position: XitunPostOffice[i][0],
+                        icon: './post-office.png',
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                        return function() {
+                            infoWindow.setContent('地址：' + XitunPostOffice[i][1]);
+                            infoWindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+            }
+
+        </script>
+
+	</body>
+</html>
