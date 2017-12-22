@@ -21,20 +21,20 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
         <script type = "text/javascript">
 
-            var penghuCenter = {lat: 23.4809223, lng: 119.2404923};
+            var penghuCenter = {lat: 23.465807, lng: 119.548109};
             var penghuZoom = 10;
             var penghuIsland = [
-                [ {lat: 24.1824159, lng: 120.6005393}, '臺中市西屯區臺灣大道4段1727號(東海大學內)'],
-                [ {lat: 24.175272, lng: 120.649134}, '臺中市西屯區河南路2段268號'],
-                [ {lat: 24.1766902, lng: 120.6376427}, '臺中市西屯區黎明路3段130號'],
-                [ {lat: 24.1646991, lng: 120.6520461}, '臺中市西屯區青海路1段83號'],
-                [ {lat: 24.1699328, lng: 120.6042603}, '臺中市西屯區工業區六路10號'],
-                [ {lat: 24.1837633, lng: 120.6015126}, '臺中市西屯區臺灣大道4段1650號(台中榮總內)'],
-                [ {lat: 24.1904375, lng: 120.610076}, '臺中市西屯區永安里西屯路3段166-80號'],
-                [ {lat: 24.1564676, lng: 120.6507665}, '臺中市西屯區大隆路60、62號'],
-                [ {lat: 24.1834831, lng: 120.6163645}, '臺中市西屯區福順路318號'],
-                [ {lat: 24.1665835, lng: 120.6409554}, '西屯區臺灣大道3段366號1樓'],
-                [ {lat: 24.2085836, lng: 120.6118869}, '西屯區中科路1號']
+                [ {lat: 23.568339, lng: 119.622011}, '澎湖本島（大山嶼）'],
+                [ {lat: 23.604937, lng: 119.510672}, '西嶼'],                
+                [ {lat: 23.661030, lng: 119.592769}, '白沙島（北沙）'],
+                [ {lat: 23.208978, lng: 119.430334}, '七美嶼（大嶼）'],
+                [ {lat: 23.373245, lng: 119.501884}, '望安島（八罩島）'],
+                [ {lat: 23.745114, lng: 119.609706}, '吉貝嶼（嘉簸嶼）'],
+                [ {lat: 23.490736, lng: 119.527231}, '虎井嶼'],
+                [ {lat: 23.256888, lng: 119.672146}, '東吉嶼'],
+                [ {lat: 23.368766, lng: 119.530910}, '將軍澳嶼'],
+                [ {lat: 23.616190, lng: 119.607280}, '中屯島'],
+                [ {lat: 23.404233, lng: 119.321863}, '花嶼']
             ];
 
             function initMap() {
@@ -46,16 +46,15 @@
                     center: penghuCenter
                 });
 
-                for( i in XitunPostOffice ) {
+                for( i in penghuIsland ) {
                     marker = new google.maps.Marker({
-                        position: XitunPostOffice[i][0],
-                        icon: './post-office.png',
+                        position: penghuIsland[i][0],
                         map: map
                     });
 
                     google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
                         return function() {
-                            infoWindow.setContent('地址：' + XitunPostOffice[i][1]);
+                            infoWindow.setContent( penghuIsland[i][1] );
                             infoWindow.open(map, marker);
                         }
                     })(marker, i));
