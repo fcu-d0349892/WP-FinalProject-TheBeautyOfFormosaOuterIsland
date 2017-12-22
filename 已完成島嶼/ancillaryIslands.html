@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-        <title>馬祖列島</title>
+        <title>台灣附屬島嶼</title>
         
         <style>
             #map {
@@ -14,24 +14,22 @@
 
 	<body>
 
-        <h1>馬祖列島</h1>
+        <h1>台灣附屬島嶼</h1>
 
         <div id="map"></div>
 
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
         <script type = "text/javascript">
 
-            var penghuCenter = {lat: 26.158037, lng: 120.210461};
-            var penghuZoom = 10;
-            var penghuIsland = [
-                [ {lat: 26.153596, lng: 119.930660}, '南竿島'],
-                [ {lat: 26.226202, lng: 119.993972}, '北竿島'],                
-                [ {lat: 26.368665, lng: 120.495080}, '東引島'],
-                [ {lat: 25.959897, lng: 119.980445}, '東莒島'],
-                [ {lat: 25.973013, lng: 119.939332}, '西莒島'],
-                [ {lat: 26.275274, lng: 119.986467}, '高登島'],
-                [ {lat: 26.379215, lng: 120.478581}, '西引島'],
-
+            var ancillaryIslandsCenter = {lat: 23.805435, lng: 120.954698};
+            var ancillaryIslandsZoom = 7;
+            var ancillaryIslandsIsland = [
+                [ {lat: 25.629050, lng: 122.079057}, '彭佳嶼'],
+                [ {lat: 24.843178, lng: 121.950796}, '龜山島'],  
+                [ {lat: 22.341263, lng: 120.370610}, '琉球嶼（小琉球）'],
+                [ {lat: 22.051250, lng: 121.545859}, '蘭嶼 '],
+                [ {lat: 21.949606, lng: 121.610209}, '小蘭嶼 '],
+                [ {lat: 22.660910, lng: 121.491154}, '綠島'],
             ];
 
             function initMap() {
@@ -39,19 +37,20 @@
                 var infoWindow = new google.maps.InfoWindow();
 
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: penghuZoom,
-                    center: penghuCenter
+                    zoom: ancillaryIslandsZoom,
+                    center: ancillaryIslandsCenter
                 });
 
-                for( i in penghuIsland ) {
+                for( i in ancillaryIslandsIsland ) {
                     marker = new google.maps.Marker({
-                        position: penghuIsland[i][0],
+                        position: ancillaryIslandsIsland[i][0],
+                        icon: './pin.png',
                         map: map
                     });
 
                     google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
                         return function() {
-                            infoWindow.setContent( penghuIsland[i][1] );
+                            infoWindow.setContent( ancillaryIslandsIsland[i][1] );
                             infoWindow.open(map, marker);
                         }
                     })(marker, i));
