@@ -21,7 +21,8 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
         <script type = "text/javascript">
 
-            var penghuCenter = {lat: 24.175176, lng: 120.630947};
+            var penghuCenter = {lat: 23.4809223, lng: 119.2404923};
+            var penghuZoom = 10;
             var penghuIsland = [
                 [ {lat: 24.1824159, lng: 120.6005393}, '臺中市西屯區臺灣大道4段1727號(東海大學內)'],
                 [ {lat: 24.175272, lng: 120.649134}, '臺中市西屯區河南路2段268號'],
@@ -40,10 +41,9 @@
 
                 var infoWindow = new google.maps.InfoWindow();
 
-                var XitunDistrict = {lat: 24.175176, lng: 120.630947};
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14,
-                    center: XitunDistrict
+                    zoom: penghuZoom,
+                    center: penghuCenter
                 });
 
                 for( i in XitunPostOffice ) {
