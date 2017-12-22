@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>南海諸島</title>
+        
+        <style>
+            #map {
+                height: 500px;
+                width: 500px;
+            }
+         </style>     
+	</head>
+
+	<body>
+
+        <h1>南海諸島</h1>
+
+        <div id="map"></div>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
+        <script type = "text/javascript">
+
+            var SouthCenter = {lat: 15.715278, lng: 116.748686};
+            var SouthZoom = 5;
+            var SouthIsland = [
+                [ {lat: 20.678778, lng: 116.816200}, '東沙環礁'],
+                [ {lat: 10.375738, lng: 114.369335}, '太平島'],
+                [ {lat: 10.385769, lng: 114.413133}, '中洲島'],
+                
+            ];
+
+            function initMap() {
+
+                var infoWindow = new google.maps.InfoWindow();
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: SouthZoom,
+                    center: SouthCenter
+                });
+
+                for( i in SouthIsland ) {
+                    marker = new google.maps.Marker({
+                        position: SouthIsland[i][0],
+                        icon: './pin.png',
+                        map: map
+                        
+                    });
+
+                    google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                        return function() {
+                            infoWindow.setContent( SouthIsland[i][1] );
+                            infoWindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+            }
+
+        </script>
+
+	</body>
+</html>
