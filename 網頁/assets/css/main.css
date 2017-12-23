@@ -500,6 +500,7 @@
 			margin: -48px 0 -1px -48px;
 			padding-top: 7%;
 			padding-right: 5%;
+			padding-bottom: 7%
 		}
 
 		.row.uniform > * {
@@ -2983,7 +2984,6 @@
 
 			img {
 				padding-left: 10%;
-				padding-top: 40%;
 				padding-right: 10%;
 			}
 			img.one{
