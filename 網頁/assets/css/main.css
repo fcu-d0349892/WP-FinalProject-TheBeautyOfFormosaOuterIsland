@@ -1580,7 +1580,7 @@
 	body {
 		/*background-image: url("../../images/header.jpg");*/
 		/*background-size: cover;*/
-		color: #dad8d8;
+		color: #000000;
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -1631,8 +1631,11 @@
 		  width: 150%;
 		}
 	}*/
+	h1 {
+		font-size:40px;
+	}
 	h1:hover {
-			color: #f52929;
+			/*color: #f52929;*/
 			border-bottom-color: transparent;
 			transition: color .50s linear;
 		}
@@ -1660,8 +1663,7 @@
 	}
 
 	h2 {
-		font-size: 2.1em;
-		font-family: 'Permanent Marker', cursive,'DFKai-sb';
+		font-size: 1.5em;
 	}
 
 	h3 {
@@ -2090,8 +2092,7 @@
 		font-family: 'Orbitron', sans-serif;
 		position: relative;
 		display: inline-block;
-		background: #df7366;
-		color: #fff;
+		
 		text-align: center;
 		/*border-radius: 0.5em;*/
 		text-decoration: none;
@@ -2770,7 +2771,7 @@
 				padding-left: 35%;
 			}
 			form{
-				padding-left: 36%;
+				padding-left: 12%;
 			}
 			h4{
 				font-size: 50px;
@@ -2960,11 +2961,11 @@
 
 			body, input, textarea, select {
 				font-size: 12.5pt;
-				line-height: 1.5em;
+				line-height: 3em;
 				
 			}
 			form {
-				padding-left: 22%;
+				padding-left: 35%;
 			}
 			
 			b{
@@ -3152,7 +3153,7 @@
 				display: block;
 				padding: 0;
 				line-height: 3em;
-				width: 60%;
+				width: 30%;
 			}
 
 		/* Off-Canvas Navigation */
