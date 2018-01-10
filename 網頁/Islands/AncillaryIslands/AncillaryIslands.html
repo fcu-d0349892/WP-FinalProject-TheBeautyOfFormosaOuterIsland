@@ -1,64 +1,146 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-        <title>台灣附屬島嶼</title>
-        
-        <style>
-            #map {
-                height: 500px;
-                width: 500px;
-            }
-         </style>     
-	</head>
+<head>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Formosa's Outer Islands</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="../../assets/css/main.14219f9b.css" rel="stylesheet">
+    <!--link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../air-slider/air-slider.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Anton|Permanent+Marker" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>台灣附屬島嶼</title>
 
-	<body>
+    <style>
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+</style>     
+</head>
 
-        <h1>台灣附屬島嶼</h1>
+<body>
+    <nav id = "nav" >
+        <ul>
+            <li><a href="#" class="scrolly">首頁</a></li> 
+            <li><a href="AncillaryIslands.html" class="scrolly">台灣附屬島嶼</a>
+                <ul>
+                    <li><a href="#" class="scrolly">彭佳嶼</a></li>
+                    <li><a href="#" class="scrolly">龜山島</a></li>
+                    <li><a href="#" class="scrolly">琉球嶼（小琉球）</a></li>
+                    <li><a href="#" class="scrolly">蘭嶼</a></li>
+                    <li><a href="#" class="scrolly">小蘭嶼</a></li>
+                    <li><a href="#" class="scrolly">綠島</a></li>     
+                </ul>   
+            </li>
+            <li><a href="Penghu.html" class="scrolly">澎湖群島</a>
+                <ul>
+                    <li><a href="#" class="scrolly">澎湖本島(大山嶼)</a></li>
+                    <li><a href="#" class="scrolly">西嶼</a></li>
+                    <li><a href="#" class="scrolly">白沙島(北沙)</a></li>
+                    <li><a href="#" class="scrolly">七美嶼(大嶼)</a></li>
+                    <li><a href="#" class="scrolly">望安島(八罩島)</a></li>
+                    <li><a href="#" class="scrolly">吉貝嶼(嘉簸嶼)</a></li>
+                    <li><a href="#" class="scrolly">虎井嶼</a></li>
+                    <li><a href="#" class="scrolly">東吉嶼</a></li>
+                    <li><a href="#" class="scrolly">將軍澳嶼</a></li>
+                    <li><a href="#" class="scrolly">中屯島</a></li>
+                    <li><a href="#" class="scrolly">花嶼</a></li>
+                </ul>
+            </li>
+            <li><a href="Kinmen.html" class="scrolly">金門</a>
+                <ul>
+                    <li><a href="#" class="scrolly">金門島</a></li>
+                    <li><a href="#" class="scrolly">小金門</a></li>
+                </ul>   
+            </li>
+            <li><a href="Matsu.html" class="scrolly">馬祖列嶼</a>
+                <ul>
+                    <li><a href="#" class="scrolly">南竿島</a></li>
+                    <li><a href="#" class="scrolly">北竿島</a></li>
+                    <li><a href="#" class="scrolly">東引島</a></li>
+                    <li><a href="#" class="scrolly">東莒島</a></li>
+                    <li><a href="#" class="scrolly">西莒島</a></li>
+                    <li><a href="#" class="scrolly">高登島</a></li>
+                    <li><a href="#" class="scrolly">西引島</a></li>
+                </ul>
+            </li>
+            <li><a href="SouthChinaSea'sIslands.html" class="scrolly">南海諸島</a>
+                <ul>
+                    <li><a href="#" class="scrolly">東沙環礁</a></li>
+                    <li><a href="#" class="scrolly">太平島</a></li>
+                    <li><a href="#" class="scrolly">中洲島</a></li>
+                </ul>   
+            </li>   
+            <li><a href="test.html">小測驗</a></li>
+        </ul>
+    </nav>
 
-        <div id="map"></div>
+    <!-- <h1>台灣附屬島嶼</h1> -->
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
-        <script type = "text/javascript">
+    <div id="map"></div>
 
-            var ancillaryIslandsCenter = {lat: 23.805435, lng: 120.954698};
-            var ancillaryIslandsZoom = 7;
-            var ancillaryIslandsIsland = [
-                [ {lat: 25.629050, lng: 122.079057}, '彭佳嶼'],
-                [ {lat: 24.843178, lng: 121.950796}, '龜山島'],  
-                [ {lat: 22.341263, lng: 120.370610}, '琉球嶼（小琉球）'],
-                [ {lat: 22.051250, lng: 121.545859}, '蘭嶼 '],
-                [ {lat: 21.949606, lng: 121.610209}, '小蘭嶼 '],
-                [ {lat: 22.660910, lng: 121.491154}, '綠島'],
-            ];
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOTVkWo2EMR6xO16mb05oKvuULxXmMZsU&callback=initMap"></script>
+    <script type = "text/javascript">
 
-            function initMap() {
+        var ancillaryIslandsCenter = {lat: 24.055435, lng: 121.054698};
+        var ancillaryIslandsZoom = 8;
+        var ancillaryIslandsIsland = [
+        [ {lat: 25.629050, lng: 122.079057}, '彭佳嶼', "www.google.com"],
+        [ {lat: 24.843178, lng: 121.950796}, '龜山島'],  
+        [ {lat: 22.341263, lng: 120.370610}, '琉球嶼（小琉球）'],
+        [ {lat: 22.051250, lng: 121.545859}, '蘭嶼 '],
+        [ {lat: 21.949606, lng: 121.610209}, '小蘭嶼 '],
+        [ {lat: 22.660910, lng: 121.491154}, '綠島'],
+        ];
 
-                var infoWindow = new google.maps.InfoWindow();
+        function initMap() {
 
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: ancillaryIslandsZoom,
-                    center: ancillaryIslandsCenter
+            var infoWindow = new google.maps.InfoWindow();
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: ancillaryIslandsZoom,
+                center: ancillaryIslandsCenter
+            });
+
+            for( i in ancillaryIslandsIsland ) {
+                marker = new google.maps.Marker({
+                    position: ancillaryIslandsIsland[i][0],
+                    icon: '../../images/pin.png',
+                    map: map,
+                    url: ancillaryIslandsIsland[i][2]
+                });
+                
+                google.maps.event.addListener(marker, 'click', function() {
+                     window.open(marker.url);
                 });
 
-                for( i in ancillaryIslandsIsland ) {
-                    marker = new google.maps.Marker({
-                        position: ancillaryIslandsIsland[i][0],
-                        icon: '../../images/pin.png',
-                        map: map
-                    });
-
-                    google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-                        return function() {
-                            infoWindow.setContent( ancillaryIslandsIsland[i][1] );
-                            infoWindow.open(map, marker);
-                        }
-                    })(marker, i));
-                }
-
+                google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                    return function() {
+                        infoWindow.setContent( ancillaryIslandsIsland[i][1] );
+                        infoWindow.open(map, marker);
+                    }
+                })(marker, i));
             }
 
-        </script>
+        }
 
-	</body>
+    </script>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.onvisible.min.js"></script>
+    <script src="../../assets/js/skel.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="../../assets/js/main.js"></script>
+</body>
 </html>
