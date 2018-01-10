@@ -93,10 +93,10 @@
         var ancillaryIslandsCenter = {lat: 24.055435, lng: 121.054698};
         var ancillaryIslandsZoom = 8;
         var ancillaryIslandsIsland = [
-        [ {lat: 25.629050, lng: 122.079057}, '彭佳嶼', "www.google.com"],
-        [ {lat: 24.843178, lng: 121.950796}, '龜山島'],  
+        [ {lat: 25.629050, lng: 122.079057}, '彭佳嶼', 'https://www.google.com.tw/'],
+        [ {lat: 24.843178, lng: 121.950796}, '龜山島', 'https://www.youtube.com/?gl=TW&hl=zh-tw'],  
         [ {lat: 22.341263, lng: 120.370610}, '琉球嶼（小琉球）'],
-        [ {lat: 22.051250, lng: 121.545859}, '蘭嶼 '],
+        [ {lat: 22.051250, lng: 121.545859}, '蘭嶼 ', 'AncillaryIslands-1.html'],
         [ {lat: 21.949606, lng: 121.610209}, '小蘭嶼 '],
         [ {lat: 22.660910, lng: 121.491154}, '綠島'],
         ];
@@ -119,7 +119,8 @@
                 });
                 
                 google.maps.event.addListener(marker, 'click', function() {
-                     window.open(marker.url);
+                     window.location.href = this.url;
+                     /*window.open(this.url);*/
                 });
 
                 google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
